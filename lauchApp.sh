@@ -20,4 +20,16 @@ multiselect () {
         if [[ $key = [B ]]; then echo down;  fi;
       fi
     }
+
+    toggle_option() {
+      local arr_name=$1
+      eval "local arr=(\"\${${arr_name}[@]}\")"
+      local option=$2
+      if [[ ${arr[option]} == true ]]; then
+        arr[option]=
+      else
+        arr[option]=true
+      fi
+      eval $arr_name='("${arr[@]}")'
+    }
 }
