@@ -32,4 +32,21 @@ multiselect () {
       fi
       eval $arr_name='("${arr[@]}")'
     }
+
+    local retval=$1
+    local options
+    local defaults
+
+    IFS=';' read -r -a options <<< "$2"
+    if [[ -z $3 ]]; then
+      defaults=()
+    else
+      IFS=';' read -r -a defaults <<< "$3"
+    fi
+    local selected=()
+
+    for ((i=0; i<${#options[@]}; i++)); do
+      selected+=("${defaults[i]}")
+      printf "\n"
+    done
 }
