@@ -49,4 +49,39 @@ multiselect () {
       selected+=("${defaults[i]}")
       printf "\n"
     done
+
+    local lastrow=`get_cursor_row`
+    local startrow=$(($lastrow - ${#options[@]}))
+
+    # ensure cursor and input echoing back on upon a ctrl+c during read -s
+    trap "cursor_blink_on; stty echo; printf '\n'; exit" 2
+    cursor_blink_off
+
+    local active=0
+        while true; do
+        local idx=0
+        for option in "${options[@]}"; do
+            local prefix="[ ]"
+            if [[ ${selected[idx]} == true ]]; then
+              prefix="[x]"
+            fi
+
+            cursor_to $(($startrow + $idx))
+            if [ $idx -eq $active ]; then
+                print_active "$option" "$prefix"
+            else
+                print_inactive "$option" "$prefix"
+            fi
+            ((idx++))
+        done
+
+        case `key_input` in
+            space)  toggle_option selected $active;;
+            enter)  break;;
+            up)     ((active--));
+                    if [ $active -lt 0 ]; then active=$((${#options[@]} - 1)); fi;;
+            down)   ((active++));
+                    if [ $active -ge ${#options[@]} ]; then active=0; fi;;
+        esac
+    done
 }
