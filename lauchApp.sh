@@ -84,4 +84,11 @@ multiselect () {
                     if [ $active -ge ${#options[@]} ]; then active=0; fi;;
         esac
     done
+
+    # cursor position back to normal
+    cursor_to $lastrow
+    printf "\n"
+    cursor_blink_on
+
+    eval $retval='("${selected[@]}")'
 }
