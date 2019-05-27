@@ -92,3 +92,5 @@ multiselect () {
 
     eval $retval='("${selected[@]}")'
 }
+
+multiselect result "Option 1;Option 2;Option 3" "true;;true"
