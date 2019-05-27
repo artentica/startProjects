@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# show configured menu
 multiselect () {
 
+    # little helpers for terminal print control and key input
     ESC=$( printf "\033")
     cursor_blink_on()   { printf "$ESC[?25h"; }
     cursor_blink_off()  { printf "$ESC[?25l"; }
@@ -33,10 +35,14 @@ multiselect () {
       eval $arr_name='("${arr[@]}")'
     }
 
+    # the value return (passed in param)
     local retval=$1
+    # The different choice we can select
     local options
+    # The default choice pre checked
     local defaults
 
+    # copy default value in local or use empty array
     IFS=';' read -r -a options <<< "$2"
     if [[ -z $3 ]]; then
       defaults=()
@@ -45,11 +51,13 @@ multiselect () {
     fi
     local selected=()
 
+    # Copy default in the select var
     for ((i=0; i<${#options[@]}; i++)); do
       selected+=("${defaults[i]}")
       printf "\n"
     done
 
+    # determine current screen position for overwriting the options
     local lastrow=`get_cursor_row`
     local startrow=$(($lastrow - ${#options[@]}))
 
@@ -58,7 +66,8 @@ multiselect () {
     cursor_blink_off
 
     local active=0
-        while true; do
+    while true; do
+        # print options by overwriting the last lines
         local idx=0
         for option in "${options[@]}"; do
             local prefix="[ ]"
@@ -75,6 +84,7 @@ multiselect () {
             ((idx++))
         done
 
+        # user key control
         case `key_input` in
             space)  toggle_option selected $active;;
             enter)  break;;
