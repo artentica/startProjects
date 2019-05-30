@@ -105,13 +105,19 @@ multiselect () {
 INPUT=./projects.csv
 OLDIFS=$IFS
 IFS=","
+declare -a label=()
+declare -a default=()
+path=()
 {
     read
     while IFS=, read -r label default path
     do
-      echo "label : $label"
-      echo "default : $default"
-      echo "path : $path"
+      label+=($label)
+      default+=($default)
+      path+=($path)
+      # echo "label : $label"
+      # echo "default : $default"
+      # echo "path : $path"
     done
 } < $INPUT
 IFS=$OLDIFS
