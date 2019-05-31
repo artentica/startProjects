@@ -2,7 +2,13 @@
 
 # show configured menu
 multiselect () {
-
+  local arr=$2
+  # echo $2
+  for i in "${options[@]}";
+      do
+          echo "$i"
+      done
+echo "${label[@]}"
     # little helpers for terminal print control and key input
     ESC=$( printf "\033")
     cursor_blink_on()   { printf "$ESC[?25h"; }
@@ -122,4 +128,4 @@ path=()
 } < $INPUT
 IFS=$OLDIFS
 
-# multiselect result "Option 1;Option 2;Option 3" "true;;true"
+multiselect result label default
