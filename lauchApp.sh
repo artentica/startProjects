@@ -2,13 +2,14 @@
 
 # show configured menu
 multiselect () {
-  local arr=$2
-  # echo $2
-  for i in "${options[@]}";
-      do
-          echo "$i"
-      done
-echo "${label[@]}"
+
+    # the value return (passed in param)
+    local retval=$1
+    # The different choice we can select
+    local -n options=$2
+    # The default choice pre checked
+    local -n defaults=$3
+
     # little helpers for terminal print control and key input
     ESC=$( printf "\033")
     cursor_blink_on()   { printf "$ESC[?25h"; }
@@ -40,13 +41,6 @@ echo "${label[@]}"
       fi
       eval $arr_name='("${arr[@]}")'
     }
-
-    # the value return (passed in param)
-    local retval=$1
-    # The different choice we can select
-    local options
-    # The default choice pre checked
-    local defaults
 
     # copy default value in local or use empty array
     IFS=';' read -r -a options <<< "$2"
