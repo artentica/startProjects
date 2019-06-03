@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # show configured menu
-multiselect () {
+multiselect() {
 
     # the value return (passed in param)
     local retval=$1
@@ -33,7 +33,7 @@ multiselect () {
     toggle_option() {
       local arr_name=$1
       eval "local arr=(\"\${${arr_name}[@]}\")"
-      local option=$2
+      local -n option=$2
       if [[ ${arr[option]} == true ]]; then
         arr[option]=
       else
@@ -43,12 +43,12 @@ multiselect () {
     }
 
     # copy default value in local or use empty array
-    IFS=';' read -r -a options <<< "$2"
-    if [[ -z $3 ]]; then
-      defaults=()
-    else
-      IFS=';' read -r -a defaults <<< "$3"
-    fi
+    # IFS=';' read -r -a options <<< "$2"
+    # if [[ -z $3 ]]; then
+    #   defaults=()
+    # else
+    #   IFS=';' read -r -a defaults <<< "$3"
+    # fi
     local selected=()
 
     # Copy default in the select var
@@ -102,6 +102,7 @@ multiselect () {
 
     eval $retval='("${selected[@]}")'
 }
+
 INPUT=./projects.csv
 OLDIFS=$IFS
 IFS=","
@@ -115,9 +116,6 @@ path=()
       label+=($label)
       default+=($default)
       path+=($path)
-      # echo "label : $label"
-      # echo "default : $default"
-      # echo "path : $path"
     done
 } < $INPUT
 IFS=$OLDIFS
