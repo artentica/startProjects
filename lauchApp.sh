@@ -111,11 +111,11 @@ declare -a default=()
 path=()
 {
     read
-    while IFS=, read -r label default path
+    while IFS=, read -r labelTmp defaultTmp pathTmp
     do
-      label+=($label)
-      default+=($default)
-      path+=($path)
+      label+=($labelTmp)
+      default+=($defaultTmp)
+      path+=($pathTmp)
     done
 } < $INPUT
 IFS=$OLDIFS
