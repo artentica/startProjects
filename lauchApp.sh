@@ -108,7 +108,7 @@ OLDIFS=$IFS
 IFS=","
 declare -a label=()
 declare -a default=()
-path=()
+declare -a path=()
 {
     read
     while IFS=, read -r labelTmp defaultTmp pathTmp
