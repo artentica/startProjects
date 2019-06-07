@@ -42,13 +42,6 @@ multiselect() {
       eval $arr_name='("${arr[@]}")'
     }
 
-    # copy default value in local or use empty array
-    # IFS=';' read -r -a options <<< "$2"
-    # if [[ -z $3 ]]; then
-    #   defaults=()
-    # else
-    #   IFS=';' read -r -a defaults <<< "$3"
-    # fi
     local selected=()
 
     # Copy default in the select var
