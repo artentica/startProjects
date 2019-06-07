@@ -96,12 +96,18 @@ multiselect() {
     eval $retval='("${selected[@]}")'
 }
 
+# import file with all the configurations
 INPUT=./projects.csv
+# save the old separation char
 OLDIFS=$IFS
+# declare new separation char
 IFS=","
+# declare all necessary varaible array
 declare -a label=()
 declare -a default=()
 declare -a path=()
+
+# Concat all value in the array and do not save the first line (labelled)
 {
     read
     while IFS=, read -r labelTmp defaultTmp pathTmp
@@ -111,6 +117,7 @@ declare -a path=()
       path+=($pathTmp)
     done
 } < $INPUT
+# reload the old separation char
 IFS=$OLDIFS
 
 multiselect result label default
