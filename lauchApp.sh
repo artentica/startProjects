@@ -33,7 +33,7 @@ multiselect() {
     toggle_option() {
       local arr_name=$1
       eval "local arr=(\"\${${arr_name}[@]}\")"
-      local -n option=$2
+      local option=$2
       if [[ ${arr[option]} == true ]]; then
         arr[option]=
       else
