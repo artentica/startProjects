@@ -35,7 +35,7 @@ multiselect() {
       eval "local arr=(\"\${${arr_name}[@]}\")"
       local option=$2
       if [[ ${arr[option]} == true ]]; then
-        arr[option]=
+        arr[option]=false
       else
         arr[option]=true
       fi
