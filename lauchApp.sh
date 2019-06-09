@@ -1,6 +1,11 @@
 #!/bin/bash
 
-# show configured menu
+#########################################
+#                                       #
+#         Show configured menu          #
+#                                       #
+#########################################
+
 multiselect() {
 
     # the value return (passed in param)
@@ -95,6 +100,12 @@ multiselect() {
 
     eval $retval='("${selected[@]}")'
 }
+
+#########################################
+#                                       #
+#    Load information from conf file    #
+#                                       #
+#########################################
 
 # import file with all the configurations
 INPUT=./projects.csv
