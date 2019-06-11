@@ -1,5 +1,5 @@
-label,default,path
-Option 1,true,aaaaaaa
-Option 2,true,bbbbbbb
-Option 3,false,ccccccc
-Option 4,true,ddddddd
+label,default,cmd,path
+Option 1,true,zsh,./test.sh
+Option 2,true,zsh,./test.sh
+Option 3,false,zsh,./test.sh
+Option 4,true,zsh,./test.sh
