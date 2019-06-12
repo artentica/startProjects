@@ -132,3 +132,12 @@ declare -a path=()
 IFS=$OLDIFS
 
 multiselect result label default
+
+
+# echo "${result[@]}"
+for i in "${result[@]}";
+    do
+        if $i; then
+          echo "$i"
+        fi
+    done
