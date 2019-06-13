@@ -135,9 +135,9 @@ multiselect result label default
 
 
 # echo "${result[@]}"
-for i in "${result[@]}";
+for i in "${!result[@]}";
     do
-        if $i; then
+        if ${result[$i]}; then
           echo "$i"
         fi
     done
