@@ -116,15 +116,17 @@ IFS=","
 # declare all necessary varaible array
 declare -a label=()
 declare -a default=()
+declare -a cmd=()
 declare -a path=()
 
 # Concat all value in the array and do not save the first line (labelled)
 {
     read
-    while IFS=, read -r labelTmp defaultTmp pathTmp
+    while IFS=, read -r labelTmp defaultTmp cmdTmp pathTmp
     do
       label+=($labelTmp)
       default+=($defaultTmp)
+      cmd+=($cmdTmp)
       path+=($pathTmp)
     done
 } < $INPUT
@@ -138,6 +140,6 @@ multiselect result label default
 for i in "${!result[@]}";
     do
         if ${result[$i]}; then
-          echo "$i"
+          echo "${cmd[$i]} ${path[$i]}"
         fi
     done
