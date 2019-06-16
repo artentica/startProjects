@@ -1,5 +1,5 @@
-label,default,cmd,path
-Option 1,true,zsh,./test.sh
-Option 2,true,zsh,./test.sh
-Option 3,false,zsh,./test.sh
-Option 4,true,zsh,./test.sh
+label,default,cmd
+Configuration,true,cmd.exe /c start cmd.exe /c wsl.exe -e cd /home/artentica/devWin/Ateme/ams/foundation/backend/configuration & npm run dev
+Device,true,wsl.exe cd
+User,false,wsl.exe cd
+Smart Bus,true,wsl.exe cd
