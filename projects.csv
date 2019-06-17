@@ -1,5 +1,5 @@
 label,default,cmd
 Configuration,true,cmd.exe /c start cmd.exe /c wsl.exe -e cd /home/artentica/devWin/Ateme/ams/foundation/backend/configuration & npm run dev
-Device,true,wsl.exe cd
+Device,true,ls
 User,false,wsl.exe cd
 Smart Bus,true,wsl.exe cd
