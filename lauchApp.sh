@@ -117,7 +117,6 @@ IFS=","
 declare -a label=()
 declare -a default=()
 declare -a cmd=()
-declare -a path=()
 
 # Concat all value in the array and do not save the first line (labelled)
 {
@@ -127,7 +126,6 @@ declare -a path=()
       label+=($labelTmp)
       default+=($defaultTmp)
       cmd+=($cmdTmp)
-      path+=($pathTmp)
     done
 } < $INPUT
 # reload the old separation char
@@ -140,6 +138,6 @@ multiselect result label default
 for i in "${!result[@]}";
     do
         if ${result[$i]}; then
-          echo "${cmd[$i]} ${path[$i]}"
+          echo "${cmd[$i]}"
         fi
     done
