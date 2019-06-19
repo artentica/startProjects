@@ -139,5 +139,6 @@ for i in "${!result[@]}";
     do
         if ${result[$i]}; then
           echo "${cmd[$i]}"
+          eval "${cmd[$i]}"
         fi
     done
