@@ -123,6 +123,9 @@ declare -a cmd=()
     read
     while IFS=, read -r labelTmp defaultTmp cmdTmp pathTmp
     do
+      if [[ $labelTmp == \#* ]]; then
+          continue #skip the lines beginning with a `#`
+      fi
       label+=($labelTmp)
       default+=($defaultTmp)
       cmd+=($cmdTmp)
