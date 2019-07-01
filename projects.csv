@@ -12,6 +12,8 @@ Output Label,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin
 Configuration,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/configuration && npm run dev"
 Alarm Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/alarm-manager && npm run dev"
 Dataminer Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/dataminer-manager && npm run dev"
-Smart Bus,true,wsl.exe cd
+#Group Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/configuration && npm run dev"
 Cluster Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/cluster-manager && npm run dev"
+#CM5000 Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/configuration && npm run dev"
+#Generator Host Ini,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/configuration && npm run dev"
 Whistleblower,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/whistleblower && npm run dev"
