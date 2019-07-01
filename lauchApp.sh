@@ -28,6 +28,7 @@ multiselect() {
       IFS= read -rsn1 key 2>/dev/null >&2
       if [[ $key = ""      ]]; then echo enter; fi;
       if [[ $key = $'\x20' ]]; then echo space; fi;
+      if [[ $key = $'\x71' ]]; then echo quit; fi;
       if [[ $key = $'\x1b' ]]; then
         read -rsn2 key
         if [[ $key = [A ]]; then echo up;    fi;
@@ -86,6 +87,7 @@ multiselect() {
         case `key_input` in
             space)  toggle_option selected $active;;
             enter)  break;;
+            quit)   exit 1;;
             up)     ((active--));
                     if [ $active -lt 0 ]; then active=$((${#options[@]} - 1)); fi;;
             down)   ((active++));
