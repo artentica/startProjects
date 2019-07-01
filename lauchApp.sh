@@ -87,7 +87,7 @@ multiselect() {
         case `key_input` in
             space)  toggle_option selected $active;;
             enter)  break;;
-            quit)   exit 1;;
+            quit)   exit 0;;
             up)     ((active--));
                     if [ $active -lt 0 ]; then active=$((${#options[@]} - 1)); fi;;
             down)   ((active++));
