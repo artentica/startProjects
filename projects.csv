@@ -1,5 +1,17 @@
 label,default,cmd
+AMS WAP Frontend,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/ams-wap-frontend && npm run dev"
+Input Probing,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/input-probing-backend && npm run dev"
+Users,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/users && npm run dev"
+Video Router,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/video-router-backend && npm run dev"
+Smart Bus,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/smart-bus && npm run dev"
+Device,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/device && npm run dev"
+Scheduler,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/slate-scheduler-backend && npm run dev"
+Mux Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/mux-manager && npm run dev"
+Live Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/live-manager && npm run dev"
+Output Label,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/output-labels-backend && npm run dev"
 Configuration,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/configuration && npm run dev"
-Device,true,ls
-User,false,wsl.exe cd
+Alarm Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/alarm-manager && npm run dev"
+Dataminer Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/dataminer-manager && npm run dev"
 Smart Bus,true,wsl.exe cd
+Cluster Manager,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/foundation/backend/cluster-manager && npm run dev"
+Whistleblower,true,cmd.exe /c start cmd.exe /c bash -c "cd /home/artentica/devWin/Ateme/ams/whistleblower && npm run dev"
