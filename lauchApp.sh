@@ -27,6 +27,7 @@ multiselect() {
       if [[ $key = ""      ]]; then echo enter; fi;
       if [[ $key = $'\x20' ]]; then echo space; fi;
       if [[ $key = $'\x71' ]]; then echo quit; fi;
+      if [[ $key = $'\x68' ]]; then echo help; fi;
       if [[ $key = $'\x1b' ]]; then
         read -rsn2 key
         if [[ $key = [A ]]; then echo up;    fi;
@@ -99,6 +100,21 @@ multiselect() {
     cursor_blink_on
 
     eval $retval='("${selected[@]}")'
+}
+
+#########################
+# The command line help #
+#########################
+display_help() {
+    echo
+    echo "Usage: $0" >&2
+    echo
+    echo "Type 'q' to quit script"
+    echo "Type 'h' to access to this page"
+    echo
+    echo "(q) to quit"
+    # echo some stuff here for the -a or --add-options
+    exit 1
 }
 
 #########################################
