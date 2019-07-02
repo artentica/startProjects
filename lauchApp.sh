@@ -1,9 +1,7 @@
 #!/bin/bash
 
 #########################################
-#                                       #
 #         Show configured menu          #
-#                                       #
 #########################################
 
 multiselect() {
@@ -104,9 +102,7 @@ multiselect() {
 }
 
 #########################################
-#                                       #
 #    Load information from conf file    #
-#                                       #
 #########################################
 
 # import file with all the configurations
