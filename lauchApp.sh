@@ -87,6 +87,7 @@ multiselect() {
             space)  toggle_option selected $active;;
             enter)  break;;
             quit)   exit 0;;
+            help)   display_help;;
             up)     ((active--));
                     if [ $active -lt 0 ]; then active=$((${#options[@]} - 1)); fi;;
             down)   ((active++));
@@ -147,7 +148,7 @@ declare -a cmd=()
 } < $INPUT
 # reload the old separation char
 IFS=$OLDIFS
-
+# printf "\xE2\x9C\x94 check mark\n"
 multiselect result label default
 
 
