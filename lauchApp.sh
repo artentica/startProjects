@@ -148,7 +148,7 @@ declare -a cmd=()
 } < $INPUT
 # reload the old separation char
 IFS=$OLDIFS
-# printf "\xE2\x9C\x94 check mark\n"
+
 multiselect result label default
 
 
